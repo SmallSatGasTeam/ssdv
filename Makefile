@@ -1,7 +1,7 @@
-
-CC=gcc
-CFLAGS=-g -O3 -Wall
-LDFLAGS=-g
+CC=/usr/bin/afl-gcc
+LD=/usr/bin/afl-gcc
+CFLAGS=-O3
+#LDFLAGS=-fsanitize=address
 
 all: ssdv
 
@@ -18,3 +18,5 @@ install: all
 clean:
 	rm -f *.o ssdv
 
+fuzz: all
+	afl-fuzz -i test_cases/ -o findings/ -- ./ssdv -e @@
