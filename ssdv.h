@@ -32,7 +32,7 @@ extern "C" {
 #define SSDV_EOI         (4)
 
 /* Packet details */
-#define SSDV_PKT_SIZE         (0x100)
+#define SSDV_PKT_SIZE         (0x80)
 #define SSDV_PKT_SIZE_HEADER  (0x0F)
 #define SSDV_PKT_SIZE_CRC     (0x04)
 #define SSDV_PKT_SIZE_RSCODES (0x20)
